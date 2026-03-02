@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* JetBrains Mono removed — using system-ui throughout */
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -44,8 +44,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* ── Typography ── */
-  --font-display: 'JetBrains Mono', monospace;
-  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-display: system-ui, -apple-system, sans-serif;
+  --font-body: system-ui, -apple-system, sans-serif;
 
   /* ── Animations ── */
   --animate-accordion-down: accordion-down 0.2s ease-out;
