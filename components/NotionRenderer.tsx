@@ -12,15 +12,15 @@ const components: Components = {
     <h3 className="font-display text-xl font-semibold text-foreground mt-6 mb-2">{children}</h3>
   ),
   p: ({ children }) => (
-    <p className="font-body text-xl text-foreground leading-relaxed mb-5">{children}</p>
+    <p className="font-body text-lg text-foreground leading-[1.75] mb-5">{children}</p>
   ),
   ul: ({ children }) => (
-    <ul className="font-body text-xl list-disc list-inside space-y-2 mb-5 text-foreground">{children}</ul>
+    <ul className="font-body text-lg list-disc list-inside space-y-2 mb-5 text-foreground">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="font-body text-xl list-decimal list-inside space-y-2 mb-5 text-foreground">{children}</ol>
+    <ol className="font-body text-lg list-decimal list-inside space-y-2 mb-5 text-foreground">{children}</ol>
   ),
-  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  li: ({ children }) => <li className="leading-[1.75]">{children}</li>,
   blockquote: ({ children }) => (
     <blockquote className="border-l-4 border-primary pl-5 italic text-muted-foreground my-6">
       {children}

@@ -14,7 +14,7 @@ export default async function AboutPage() {
 
   return (
     <div className="pt-32 pb-24">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
           <p className="font-display text-sm text-primary tracking-widest uppercase mb-3">

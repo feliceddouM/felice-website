@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Excerpt */}
         {post.excerpt && (
-          <p className="font-body text-xl text-muted-foreground leading-relaxed mb-12 border-l-4 border-primary pl-5">
+          <p className="font-body text-lg text-muted-foreground leading-[1.75] mb-12 border-l-4 border-primary pl-5">
             {post.excerpt}
           </p>
         )}

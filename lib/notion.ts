@@ -36,6 +36,7 @@ export interface BlogPost {
 export interface AutomationCase {
   id: string
   name: string
+  slug: string
   description: string
   tools: string[]
   metric: string
@@ -112,6 +113,7 @@ function parseCase(page: PageObjectResponse): AutomationCase {
   return {
     id: page.id,
     name: extractText(props['名稱']?.title ?? []),
+    slug: extractText(props['Slug']?.rich_text ?? []) || (props['Slug']?.url ?? ''),
     description: extractText(props['描述']?.rich_text ?? []),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     tools: props['工具']?.multi_select?.map((t: any) => t.name) ?? [],
@@ -131,6 +133,24 @@ export async function getCases(): Promise<AutomationCase[]> {
   return res.results
     .filter((p): p is PageObjectResponse => p.object === 'page' && 'properties' in p)
     .map(parseCase)
+}
+
+/** Returns a single case by its URL slug. */
+export async function getCaseBySlug(slug: string): Promise<AutomationCase | null> {
+  const res = await notion.dataSources.query({
+    data_source_id: process.env.NOTION_CASES_DB_ID!,
+    filter: { property: 'Slug', rich_text: { equals: slug } },
+  })
+  const page = res.results.find(
+    (p): p is PageObjectResponse => p.object === 'page' && 'properties' in p
+  )
+  return page ? parseCase(page) : null
+}
+
+/** Returns all case slugs (used for static params). */
+export async function getAllCaseSlugs(): Promise<string[]> {
+  const cases = await getCases()
+  return cases.map((c) => c.slug).filter(Boolean)
 }
 
 // ── About Page ──────────────────────────────────────────────────────────────
