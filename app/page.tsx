@@ -77,7 +77,7 @@ export default async function HomePage() {
                   精選案例
                 </h2>
                 <p className="font-body text-lg text-muted-foreground max-w-lg">
-                  我自己做過的和值得參考的 AI 工作流程案例
+                  值說AI做過的
                 </p>
               </div>
               <Link
