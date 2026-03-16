@@ -6,7 +6,7 @@ export const revalidate = 3600 // ISR: 1 hour
 
 export const metadata: Metadata = {
   title: '文章',
-  description: '從實作出發，分享 AI 工作術與自動化思維',
+  description: 'AI 趨勢 × 自動化教學',
 }
 
 export default async function BlogPage() {
@@ -24,7 +24,7 @@ export default async function BlogPage() {
             所有文章
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-lg">
-            從實作出發，分享 AI 工作術與自動化思維
+            AI 趨勢 × 自動化教學
           </p>
         </div>
 

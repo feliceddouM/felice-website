@@ -40,7 +40,7 @@ export default async function HomePage() {
                   最新文章
                 </h2>
                 <p className="font-body text-lg text-muted-foreground max-w-lg">
-                  AI 工作術與工作流程設計，每週持續更新
+                  AI 趨勢 × 自動化教學
                 </p>
               </div>
               <Link
@@ -77,7 +77,7 @@ export default async function HomePage() {
                   精選案例
                 </h2>
                 <p className="font-body text-lg text-muted-foreground max-w-lg">
-                  值說做過的
+                  企業自動化案例
                 </p>
               </div>
               <Link

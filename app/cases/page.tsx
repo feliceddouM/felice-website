@@ -24,7 +24,7 @@ export default async function CasesPage() {
             所有案例
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-lg">
-            真實的 AI 應用或自動化案例
+            企業自動化案例
           </p>
         </div>
 
