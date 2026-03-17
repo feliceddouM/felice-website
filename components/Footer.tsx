@@ -22,7 +22,7 @@ export default function Footer() {
               值說
             </p>
             <p className="font-body text-sm text-muted-foreground">
-              AI 流程自動化
+              AI 流程自動化服務
             </p>
           </div>
 

@@ -7,7 +7,7 @@ export default function HeroSection() {
       <div className="max-w-5xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
           <p className="font-display text-sm text-primary tracking-widest uppercase mb-6 animate-fade-in-up">
-            AI 流程自動化
+            AI 流程自動化服務
           </p>
 
           <h1
@@ -16,7 +16,7 @@ export default function HeroSection() {
           >
             重複的事交給 AI，
             <br />
-            <span className="text-primary">把時間花在真正值得的事</span>
+            <span className="text-primary">值說幫你把時間花在真正值得的事</span>
           </h1>
 
           <p
