@@ -16,7 +16,7 @@ export default function HeroSection() {
           >
             重複的事交給 AI，
             <br />
-            <span className="text-primary">值說幫你把時間花在真正值得的事</span>
+            <span className="text-primary">AI 的事交給值說</span>
           </h1>
 
           <p
