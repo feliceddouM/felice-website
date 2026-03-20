@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
 const socialLinks = [
-  { href: 'https://www.linkedin.com/in/felice-fc-wu', label: 'LinkedIn' },
-  { href: 'https://www.threads.com/@fcfwu', label: 'Threads' },
+  { href: 'https://www.threads.com/@worthyai.tw', label: 'Threads' },
 ]
 
 const navLinks = [
