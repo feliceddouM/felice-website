@@ -24,7 +24,7 @@ export default async function BlogPage() {
             AI 趨勢與應用
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-lg">
-            我們導入 AI 的現場觀察
+            我們使用 AI 的心法與觀察
           </p>
         </div>
 
