@@ -1,7 +1,7 @@
 import { Client } from '@notionhq/client'
 import { NextRequest, NextResponse } from 'next/server'
 
-const notion = new Client({ auth: process.env.NOTION_TOKEN })
+const notion = new Client({ auth: process.env.NOTION_API_KEY })
 const DB_ID = '152a1c2bca734b80b4f2fd52cd397473'
 
 export async function POST(req: NextRequest) {

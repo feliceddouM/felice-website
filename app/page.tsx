@@ -10,7 +10,8 @@ import { getPublishedPosts, getCases } from '@/lib/notion'
 export const revalidate = 3600 // ISR: revalidate every 1 hour
 
 export const metadata: Metadata = {
-  title: '值說 WorthIt',
+  // absolute 跳過 layout template，避免變成「值說 WorthIt｜值說 WorthIt」
+  title: { absolute: '值說 WorthIt｜AI 流程自動化服務' },
   description: '值說 (WorthIt) 提供 AI 流程自動化服務，幫助企業和團隊把重複性工作交給 AI，把時間花在真正值得的事。服務涵蓋自動化工具開發、AI 工作流程設計與企業導入諮詢。',
 }
 
