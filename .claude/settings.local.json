@@ -46,7 +46,13 @@
       "Bash(curl -s \"https://raw.githubusercontent.com/feliceddouM/my-creative-corner/main/src/components/NewsletterSection.tsx\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/feliceddouM/my-creative-corner/main/src/components/PortfolioSection.tsx\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/feliceddouM/my-creative-corner/main/src/pages/Index.tsx\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/feliceddouM/my-creative-corner/main/src/App.tsx\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/feliceddouM/my-creative-corner/main/src/App.tsx\")",
+      "Bash(npm install resend)",
+      "Bash(git push origin main)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add components/Header.tsx components/Footer.tsx components/HeroSection.tsx app/diagnose/page.tsx app/page.tsx)",
+      "Bash(git commit:*)",
+      "Bash(git add app/page.tsx app/blog/page.tsx app/cases/page.tsx app/diagnose/page.tsx app/about/page.tsx components/HeroSection.tsx components/Header.tsx components/Footer.tsx)"
     ]
   }
 }
