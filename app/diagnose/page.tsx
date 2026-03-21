@@ -16,12 +16,10 @@ export default function DiagnosePage() {
             流程健檢
           </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            花兩分鐘，
-            <br />
-            看看你的流程有多少可以省
+            AI 流程的事交給我們
           </h1>
           <p className="font-body text-lg text-muted-foreground max-w-lg">
-            填完之後，我們會根據你的狀況給出具體建議。
+            填五個問題，我們會在兩個工作天內聯繫你
           </p>
         </div>
 
