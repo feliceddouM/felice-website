@@ -37,7 +37,7 @@ export default async function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                實際做過的事
+                精選 AI 應用案例
               </h2>
               <Link
                 href="/cases"
