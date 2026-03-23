@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next'
-import { getAllPostSlugs } from '@/lib/notion'
+import { getAllPostSlugs, getAllCaseSlugs } from '@/lib/notion'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://felicewu.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://worthit-ai.com'
+
+export const revalidate = 3600 // regenerate sitemap every hour
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
@@ -25,6 +27,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/diagnose`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -43,8 +51,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }))
   } catch {
-    // Silently skip if Notion is unavailable at build time
+    // Silently skip if Notion is unavailable
   }
 
-  return [...staticPages, ...postPages]
+  // Dynamic case pages
+  let casePages: MetadataRoute.Sitemap = []
+  try {
+    const slugs = await getAllCaseSlugs()
+    casePages = slugs.map((slug) => ({
+      url: `${BASE_URL}/cases/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+  } catch {
+    // Silently skip if Notion is unavailable
+  }
+
+  return [...staticPages, ...postPages, ...casePages]
 }
