@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  async redirects() {
+    return [
+      {
+        source: '/cases/gym-n8n',
+        destination: '/cases/n8n-gym-dashboard',
+        permanent: true, // 301 redirect
+      },
+    ]
+  },
 }
 
 export default nextConfig
