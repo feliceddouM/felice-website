@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection'
 import ArticleCard from '@/components/ArticleCard'
 import CaseCard from '@/components/CaseCard'
 import NewsletterSection from '@/components/NewsletterSection'
-import { getPublishedPosts, getCases } from '@/lib/notion'
+import { getFeaturedPosts, getFeaturedCases } from '@/lib/notion'
 
 export const revalidate = 3600 // ISR: revalidate every 1 hour
 
@@ -16,12 +16,10 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const [allPosts, allCases] = await Promise.all([
-    getPublishedPosts().catch(() => []),
-    getCases().catch(() => []),
+  const [featuredPosts, homepageCases] = await Promise.all([
+    getFeaturedPosts().catch(() => []),
+    getFeaturedCases().catch(() => []),
   ])
-
-  const featuredPosts = allPosts.slice(0, 3)
 
   return (
     <>
@@ -49,10 +47,10 @@ export default async function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {allCases.length === 0 ? (
+            {homepageCases.length === 0 ? (
               <p className="font-body text-muted-foreground">案例即將上線，敬請期待</p>
             ) : (
-              allCases.map((c) => (
+              homepageCases.map((c) => (
                 <CaseCard key={c.id} automationCase={c} />
               ))
             )}

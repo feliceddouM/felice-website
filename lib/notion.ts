@@ -63,6 +63,24 @@ function parsePost(page: PageObjectResponse): BlogPost {
   }
 }
 
+/** Returns up to 3 featured posts for the homepage. */
+export async function getFeaturedPosts(): Promise<BlogPost[]> {
+  const res = await notion.dataSources.query({
+    data_source_id: process.env.NOTION_BLOG_DB_ID!,
+    filter: {
+      and: [
+        { property: '已發布', checkbox: { equals: true } },
+        { property: '首頁精選', checkbox: { equals: true } },
+      ],
+    },
+    sorts: [{ property: '發布日期', direction: 'descending' }],
+  })
+  return res.results
+    .filter((p): p is PageObjectResponse => p.object === 'page' && 'properties' in p)
+    .map(parsePost)
+    .slice(0, 3)
+}
+
 /** Returns all published blog posts, sorted newest-first. */
 export async function getPublishedPosts(): Promise<BlogPost[]> {
   const res = await notion.dataSources.query({
@@ -126,6 +144,19 @@ function parseCase(page: PageObjectResponse): AutomationCase {
     before: extractText(props['以前']?.rich_text ?? []) || undefined,
     after: extractText(props['現在']?.rich_text ?? []) || undefined,
   }
+}
+
+/** Returns up to 2 featured cases for the homepage. */
+export async function getFeaturedCases(): Promise<AutomationCase[]> {
+  const res = await notion.dataSources.query({
+    data_source_id: process.env.NOTION_CASES_DB_ID!,
+    filter: { property: '首頁精選', checkbox: { equals: true } },
+    sorts: [{ property: '排序', direction: 'ascending' }],
+  })
+  return res.results
+    .filter((p): p is PageObjectResponse => p.object === 'page' && 'properties' in p)
+    .map(parseCase)
+    .slice(0, 2)
 }
 
 /** Returns all cases from the Automation Cases DB, sorted by 排序. */
