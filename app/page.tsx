@@ -60,11 +60,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ③ Newsletter */}
-      <NewsletterSection />
-
-      {/* ④ Articles */}
-      <section className="py-24 md:py-32 bg-card">
+      {/* ③ Articles */}
+      <section className="py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6">
           <div className="mb-16">
             <p className="font-display text-base text-primary tracking-widest uppercase mb-3">
@@ -94,6 +91,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ④ Newsletter */}
+      <NewsletterSection />
 
       {/* ⑤ CTA */}
       <section className="py-24 md:py-32">
