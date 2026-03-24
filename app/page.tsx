@@ -99,7 +99,7 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">
-            不知道從哪裡開始？
+            想做自動化但是卡住了？
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-sm mx-auto">
             花 2 分鐘找出第一步
